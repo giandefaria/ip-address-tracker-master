@@ -1,5 +1,10 @@
 import './main.css'
 import arrow from '../../assets/styles/images/icon-arrow.svg'
+import {
+    MapContainer,
+    //TileLayer,
+    //useMap,
+} from 'https://cdn.esm.sh/react-leaflet'
 
 
 const PartePrincipal = () => {
@@ -41,7 +46,11 @@ const PartePrincipal = () => {
             </section>
             <section className='content--map'>
   
-                <div id='map'></div>
+                <div id='map'>
+                    <MapContainer> 
+
+                    </MapContainer> 
+                </div>
             </section>
         </div>
     );
