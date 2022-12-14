@@ -4,3 +4,4 @@ Crio uma pasta de 'components', que são os botoes ou todos os componentes que u
 Crio uma pasta 'assets', onde adicionarei os itens estáticos estruturais da página. Fazem parte da estrutura visual da página, como uma logo. 
 Em services ficarão a API
 Criação com TS https://www.youtube.com/watch?v=AW_rSUpDBRo  e  https://www.youtube.com/watch?v=zFAAZycE_To
+
