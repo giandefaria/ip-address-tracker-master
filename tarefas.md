@@ -1,5 +1,5 @@
 - [X] dividir a página principal entre o box em que tera o input do ip, e a parte debaixo em que terá a exibição do mapa
-- [] adicionar o background na div superior
+- [X] adicionar o background na div superior
 - [] adicionar o h1 e o input do ip
 - [] adicionar o arrow no final do input 
 - [] adicionar o box com os valores que serão retornados pela api. Esse box terá display flex

@@ -21,3 +21,7 @@ html {
     height: 70vh;
     background: yellow;
 }
+
+.title--ip--box {
+    color: white;
+}
