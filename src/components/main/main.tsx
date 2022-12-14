@@ -6,6 +6,7 @@ const PartePrincipal = () => {
 
     return (
         <div>
+
             <section className='content--ip--input'>
                 <h1 className='title--ip--box'>IP Address Tracker</h1>
                 
@@ -39,7 +40,8 @@ const PartePrincipal = () => {
                 </section>
             </section>
             <section className='content--map'>
-                
+  
+                <div id='map'></div>
             </section>
         </div>
     );
