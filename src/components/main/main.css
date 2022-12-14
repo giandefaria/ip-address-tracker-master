@@ -1,14 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 .content--ip--input {
-    width: 100vw;
+    width: 100%;
     height: 30vh;
-    background: blue;
+    background: url(/src/assets/styles/images/pattern-bg.png);
 
 
 }
 
 .content--map {
-    width: 100vw;
+    width: 100%;
     height: 70vh;
     background: yellow;
 }
