@@ -10,3 +10,4 @@ Criação com TS https://www.youtube.com/watch?v=AW_rSUpDBRo  e  https://www.you
 https://react-leaflet.js.org/docs/start-installation/
 https://leafletjs.com/examples/quick-start/
 Link do youtube realizando na prática https://www.youtube.com/watch?v=CIz8aZiAE7M
+Resumidamente, tive que executar os comandos npm constantes na página react leaflet. Após isso, tive que importar os módulos de 'react-leaflet', conforme pode ser visto no topo do arquivo main.tsx. Conforme mostrado no site, só é indicado a importação do MapContainer, TileLayer, e Usemap. Mas no código que o site recomenda adicionar, consta alguns módulos que não estão citados na documentação. Por isso, tive que adicionar a importação do modulo Marker e Popup, pois o código chama eles durante a execução. 

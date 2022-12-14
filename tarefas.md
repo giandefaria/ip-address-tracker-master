@@ -3,7 +3,7 @@
 - [X] adicionar o h1 e o input do ip
 - [X] adicionar o arrow no final do input 
 - [X] adicionar o box com os valores que serão retornados pela api. Esse box terá display flex
-- [] adicionar o mapa abaixo
+- [x] adicionar o mapa abaixo
 - [] integrar a api de localização pelo ip
 - [] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
 - [] adicionar o icone de localização 
