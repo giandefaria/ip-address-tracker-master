@@ -27,15 +27,17 @@ html {
     color: white;
 }
 
+label {
+    display: flex;
+}
+
 .input--ip {
     width: 50%;
 }
 
-label::after {
-
-    content: url(/src/assets/styles/images/icon-arrow.svg);
-    height: 100%;
+.arrow {
     background: black;
-    cursor: pointer;
+    padding: 20px;
+    border-radius: 0 14px 14px 0;
     
 }

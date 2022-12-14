@@ -1,4 +1,5 @@
 import './main.css'
+import arrow from '../../assets/styles/images/icon-arrow.svg'
 
 
 const PartePrincipal = () => {
@@ -10,6 +11,7 @@ const PartePrincipal = () => {
                 
                 <label htmlFor="ip">
                     <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' />
+                    <img src={arrow} alt="arrow" className='arrow' />
                 </label>
                 
             </section>
