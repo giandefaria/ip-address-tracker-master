@@ -41,3 +41,19 @@ label {
     border-radius: 0 14px 14px 0;
     
 }
+
+.api--value--return {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    background: white;
+
+}
+
+.api--value--return div {
+    border-right: 2px solid black;
+}
