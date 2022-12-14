@@ -26,3 +26,16 @@ html {
 .title--ip--box {
     color: white;
 }
+
+.input--ip {
+    width: 50%;
+}
+
+label::after {
+
+    content: url(/src/assets/styles/images/icon-arrow.svg);
+    height: 100%;
+    background: black;
+    cursor: pointer;
+    
+}
