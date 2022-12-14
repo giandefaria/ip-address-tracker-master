@@ -60,3 +60,7 @@ label {
     /*padding para espaçamento da borda*/
 }
 
+/*class Leaflet module*/
+.leaflet-container {
+    height: 200px;
+}

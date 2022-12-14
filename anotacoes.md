@@ -5,3 +5,8 @@ Crio uma pasta 'assets', onde adicionarei os itens estáticos estruturais da pá
 Em services ficarão a API
 Criação com TS https://www.youtube.com/watch?v=AW_rSUpDBRo  e  https://www.youtube.com/watch?v=zFAAZycE_To
 
+
+*Para instalar a api do mapa, existe a documentaçao padrão, e também a necessidade de instalar react leaflet. 
+https://react-leaflet.js.org/docs/start-installation/
+https://leafletjs.com/examples/quick-start/
+Link do youtube realizando na prática https://www.youtube.com/watch?v=CIz8aZiAE7M

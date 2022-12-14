@@ -4,7 +4,7 @@ import {
     MapContainer,
     //TileLayer,
     //useMap,
-} from 'https://cdn.esm.sh/react-leaflet'
+} from 'react-leaflet'
 
 
 const PartePrincipal = () => {
