@@ -2,8 +2,8 @@ import './main.css'
 import arrow from '../../assets/styles/images/icon-arrow.svg'
 import {
     MapContainer,
-    //TileLayer,
-    //useMap,
+    TileLayer,
+    useMap,
 } from 'react-leaflet'
 
 
@@ -47,7 +47,7 @@ const PartePrincipal = () => {
             <section className='content--map'>
   
                 <div id='map'>
-                    <MapContainer> 
+                    <MapContainer center={[51.505, -0.09]}> 
 
                     </MapContainer> 
                 </div>
