@@ -24,10 +24,13 @@ function apiIp () {
 
             const ipHtmlElement = document.querySelector('.ip') as HTMLElement;
             const locationHtmlElement = document.querySelector('.location') as HTMLElement;
-            const timezoneHtmlElement = document.querySelector('.timezone--box') as HTMLElement;
+            const timezoneHtmlElement = document.querySelector('.timezone') as HTMLElement;
             const ispHtmlElement = document.querySelector('.isp') as HTMLElement;
 
-            
+            ipHtmlElement.innerHTML = ip;
+            locationHtmlElement.innerHTML = location;
+            timezoneHtmlElement.innerHTML = timezone;
+            ispHtmlElement.innerHTML = isp;
 
         })
 

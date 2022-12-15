@@ -38,7 +38,7 @@ const PartePrincipal = () => {
 
                     <div className='timezone--box'>
                         <h2>TIMEZONE</h2>
-                        <p className="timezone--box"></p>
+                        <p className="timezone"></p>
                     </div>
 
                     <div className='isp--box'>

@@ -5,5 +5,6 @@
 - [X] adicionar o box com os valores que serão retornados pela api. Esse box terá display flex
 - [x] adicionar o mapa abaixo
 - [X] integrar a api de localização pelo ip
+- [X] adicionar valores capturados pela api no html da página
 - [] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
 - [] adicionar o icone de localização 
