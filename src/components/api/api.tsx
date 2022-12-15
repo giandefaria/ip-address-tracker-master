@@ -13,7 +13,11 @@ function apiIp () {
         Response.json().then((data) => {
             console.log(data);
             location = data.location.city + ' , ' + data.location.region + " " + data.location.postalCode;
+            timezone = data.location.timezone;
+            isp = data.isp;
             console.log(location);
+            console.log(timezone);
+            console.log (isp);
         })
 
     })
