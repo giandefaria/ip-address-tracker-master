@@ -14,7 +14,7 @@ function apiIp () {
         Response.json().then((data) => {
             console.log(data);
             ip = data.ip;
-            location = data.location.city + ', ' + data.location.region + " " + data.location.postalCode;
+            location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
             timezone = data.location.timezone;
             isp = data.isp;
             console.log(ip);
