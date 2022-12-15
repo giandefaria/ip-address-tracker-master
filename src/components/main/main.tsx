@@ -8,6 +8,8 @@ import {
     useMap,
 } from 'react-leaflet'
 
+import apiIp from '../api/api'
+
 
 const PartePrincipal = () => {
 
@@ -19,7 +21,7 @@ const PartePrincipal = () => {
                 
                 <label htmlFor="ip">
                     <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' />
-                    <img src={arrow} alt="arrow" className='arrow' />
+                    <img src={arrow} alt="arrow" className='arrow' onClick={apiIp}/>
                 </label>
                 
                 <section className='api--value--return'>
