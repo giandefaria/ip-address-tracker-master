@@ -9,7 +9,7 @@ function apiIp () {
     let isp;
     console.log(ipOrDomain.value); 
 
-    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=8.8.8.8').then((Response) =>{
+    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain).then((Response) =>{
         
         Response.json().then((data) => {
             console.log(data);
