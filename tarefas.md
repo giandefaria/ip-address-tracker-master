@@ -7,5 +7,6 @@
 - [X] integrar a api de localização pelo ip
 - [X] adicionar valores capturados pela api no html da página
 - [ ] fazer a api procurar o valor adicionado no input
+- [ ] implementar para capturar o ip pessoal
 - [] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
 - [] adicionar o icone de localização 

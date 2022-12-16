@@ -8,7 +8,12 @@ import {
     useMap,
 } from 'react-leaflet'
 
+import '../api/api'
 import apiIp from '../api/api'
+import latitude from '../api/api'
+
+
+
 
 
 const PartePrincipal = () => {

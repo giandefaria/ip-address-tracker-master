@@ -1,4 +1,6 @@
 
+    let latitude: number;
+    let longitude: number;
 
 function apiIp () {
 
@@ -7,9 +9,10 @@ function apiIp () {
     let location;
     let timezone;
     let isp;
+
     console.log(ipOrDomain.value); 
 
-    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain).then((Response) =>{
+    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value).then((Response) =>{
         
         Response.json().then((data) => {
             console.log(data);
@@ -17,6 +20,8 @@ function apiIp () {
             location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
             timezone = data.location.timezone;
             isp = data.isp;
+            latitude = data.location.lat;
+            longitude = data.location.lng
             console.log(ip);
             console.log(location);
             console.log(timezone);
@@ -35,8 +40,17 @@ function apiIp () {
         })
 
     })
-
-
 } 
 
+export const lat = () => {
+    return latitude;
+}
+
+export const lng = () => {
+    return longitude;
+}
+
 export default apiIp
+
+
+
