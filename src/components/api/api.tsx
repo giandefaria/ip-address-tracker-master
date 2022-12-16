@@ -1,8 +1,9 @@
 
-    let latitude: number;
-    let longitude: number;
+    export let latitude: number;
+    export let longitude: number;
+ 
 
-function apiIp () {
+export function apiIp () {
 
     let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
     let ip;
@@ -42,15 +43,6 @@ function apiIp () {
     })
 } 
 
-export const lat = () => {
-    return latitude;
-}
-
-export const lng = () => {
-    return longitude;
-}
-
-export default apiIp
 
 
 
