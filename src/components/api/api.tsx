@@ -10,8 +10,8 @@ import { JsxAttribute } from 'typescript';
    
    
    
-    export let latitude: number;
-    export let longitude: number;
+    export let latitude: number = 51.505;
+    export let longitude: number = -0.09;
  
 
 export function apiIp () {

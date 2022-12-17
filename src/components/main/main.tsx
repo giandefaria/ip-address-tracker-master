@@ -13,6 +13,8 @@ import { apiIp } from '../api/api'
 import { latitude } from '../api/api'
 import { longitude } from '../api/api' 
 
+console.log(latitude);
+console.log(longitude);
 
 
 
@@ -57,12 +59,12 @@ const PartePrincipal = () => {
             <section className='content--map'>
   
                 <div id='map'>
-                    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}> 
+                    <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={false}> 
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                      <Marker position={[51.505, -0.09]}>
+                      <Marker position={[latitude, longitude]}>
                         <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
