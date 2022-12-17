@@ -26,7 +26,9 @@ export function apiIp () {
             console.log(ip);
             console.log(location);
             console.log(timezone);
-            console.log (isp);
+            console.log(isp);
+            console.log(latitude);
+            console.log(longitude);
 
             const ipHtmlElement = document.querySelector('.ip') as HTMLElement;
             const locationHtmlElement = document.querySelector('.location') as HTMLElement;
