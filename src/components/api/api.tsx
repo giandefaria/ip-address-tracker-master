@@ -7,6 +7,7 @@ import {
     useMap,
 } from 'react-leaflet'
 import { JsxAttribute } from 'typescript';
+import { useEffect } from 'react';
    
    
    
@@ -51,8 +52,14 @@ export function apiIp () {
             timezoneHtmlElement.innerHTML = timezone;
             ispHtmlElement.innerHTML = isp;
 
-            reload();
+            const position = [latitude, longitude]
+            const map = useMap()
 
+            
+            map.flyTo (position as [number, number], 13, {
+                    animate:true
+             })
+         
 
             /*const idMap = document.querySelector('#map') as HTMLElement
             idMap.after(mapRender);*/
@@ -64,14 +71,30 @@ export function apiIp () {
     })
 }
 
-function reload() {
-    const map = document.querySelector('#map') as any;
-    map.reload(true);
-    let mapContent = map.innerHTML;
-    map.innerHTML = mapContent;
-    console.log('map refreshed')
 
+
+function reload() {
+    const map = document.querySelector('#map') as HTMLDivElement;
+    map.innerHTML = `
+            <MapContainer center={[${latitude}, ${longitude}]} zoom={13} scrollWheelZoom={true}> 
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+
+          <Marker position={[${latitude}, ${longitude}]}> 
+            <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>      
+
+        </MapContainer> 
+
+        <h1>ReloadOk</h1>;
+
+        `
 }
+
 
 /*function mapRender() {
  

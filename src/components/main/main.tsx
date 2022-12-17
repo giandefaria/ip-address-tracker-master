@@ -6,12 +6,15 @@ import {
     Marker,
     Popup,
     useMap,
+
 } from 'react-leaflet'
+
 
 import '../api/api'
 import { apiIp } from '../api/api'
 import { latitude } from '../api/api'
 import { longitude } from '../api/api' 
+
 
 console.log(latitude);
 console.log(longitude);
@@ -20,6 +23,8 @@ console.log(longitude);
 
 
 const PartePrincipal = () => {
+
+    
 
     return (
         <div>
@@ -59,11 +64,12 @@ const PartePrincipal = () => {
             <section className='content--map'>
   
                 <div id='map'>
-                    <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={false}> 
+                    <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={true}> 
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
+
                       <Marker position={[latitude, longitude]}> 
                         <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
