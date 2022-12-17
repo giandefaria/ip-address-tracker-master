@@ -51,12 +51,26 @@ export function apiIp () {
             timezoneHtmlElement.innerHTML = timezone;
             ispHtmlElement.innerHTML = isp;
 
+            reload();
+
+
             /*const idMap = document.querySelector('#map') as HTMLElement
             idMap.after(mapRender);*/
+
+            
 
         })
 
     })
+}
+
+function reload() {
+    const map = document.querySelector('#map') as any;
+    map.reload(true);
+    let mapContent = map.innerHTML;
+    map.innerHTML = mapContent;
+    console.log('map refreshed')
+
 }
 
 /*function mapRender() {
