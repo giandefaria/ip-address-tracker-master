@@ -1,4 +1,15 @@
-
+import arrow from '../../assets/styles/images/icon-arrow.svg'
+import {
+    MapContainer,
+    TileLayer,
+    Marker,
+    Popup,
+    useMap,
+} from 'react-leaflet'
+import { JsxAttribute } from 'typescript';
+   
+   
+   
     export let latitude: number;
     export let longitude: number;
  
@@ -40,10 +51,34 @@ export function apiIp () {
             timezoneHtmlElement.innerHTML = timezone;
             ispHtmlElement.innerHTML = isp;
 
+            /*const idMap = document.querySelector('#map') as HTMLElement
+            idMap.after(mapRender);*/
+
         })
 
     })
-} 
+}
+
+/*function mapRender() {
+ 
+    return (
+        <div id='map'>
+                    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}> 
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                      <Marker position={[51.505, -0.09]}>
+                        <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
+                      </Marker>      
+
+                    </MapContainer> 
+                </div>
+    )
+
+}*/
 
 
 
