@@ -1,7 +1,11 @@
 import { useEffect } from "react"
 import { Marker, Popup, useMap } from "react-leaflet"
-import { latitude } from "./api"
-import { longitude } from "./api"
+//import { latitude } from "./api"
+//import { longitude } from "./api"
+import {
+  latitude,
+  longitude
+} from "../main/main"
 
 
 
