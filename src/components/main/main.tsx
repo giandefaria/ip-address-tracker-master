@@ -13,12 +13,11 @@ import { useEffect } from 'react'
 
 import '../api/api'
 import { apiIp } from '../api/api'
-//import { latitude } from '../api/api'
-//import { longitude } from '../api/api' 
+import { latitude } from '../api/api'
+import { longitude } from '../api/api' 
 import Markerposition from '../api/Markerposition'
 
-let latitude: number = 51.505;
-let longitude: number = -0.09;
+
 
 console.log(latitude);
 console.log(longitude);
@@ -29,7 +28,7 @@ console.log(longitude);
 const PartePrincipal = () => {
 
     useEffect(() =>{
-        console.log('renderizacao principal')
+        console.log('renderizacao')
     })
 
     return (
