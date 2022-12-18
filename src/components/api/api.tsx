@@ -8,14 +8,16 @@ import {
 } from 'react-leaflet'
 import { JsxAttribute } from 'typescript';
 import { useEffect } from 'react';
-   
-   
-   
-    export let latitude: number = 51.505;
-    export let longitude: number = -0.09;
- 
+import Markerposition from './Markerposition';
 
-export function apiIp () {
+
+
+export let latitude: number = 51.505;
+export let longitude: number = -0.09;
+export let position = [latitude, longitude];
+
+
+export function apiIp() {
 
     let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
     let ip;
@@ -23,10 +25,10 @@ export function apiIp () {
     let timezone;
     let isp;
 
-    console.log(ipOrDomain.value); 
+    console.log(ipOrDomain.value);
 
-    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value).then((Response) =>{
-        
+    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value).then((Response) => {
+
         Response.json().then((data) => {
             console.log(data);
             ip = data.ip;
@@ -53,18 +55,19 @@ export function apiIp () {
             ispHtmlElement.innerHTML = isp;
 
             const position = [latitude, longitude]
-            const map = useMap()
+            console.log(position)
 
-            
-            map.flyTo (position as [number, number], 13, {
-                    animate:true
-             })
-         
-
+            return (
+                <>
+                  <Marker position={position as [number, number]}>
+                    <Popup>This is the location of the IP Address or Domain</Popup>
+                  </Marker>
+                </>
+             )
             /*const idMap = document.querySelector('#map') as HTMLElement
             idMap.after(mapRender);*/
 
-            
+
 
         })
 
