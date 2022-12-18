@@ -10,3 +10,5 @@
 - [ ] implementar para capturar o ip pessoal
 - [] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
 - [] adicionar o icone de localização 
+
+tentar o u seEffect para identificar useState. Tentar criar um useState para a latitude e longitude

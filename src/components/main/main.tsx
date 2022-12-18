@@ -27,6 +27,17 @@ export let position = [latitude, longitude];
 console.log(latitude);
 console.log(longitude);
 
+const Test = () => {
+    useEffect(() => {
+
+    
+        console.log('renderizado ok 2222')
+   
+   
+   
+   }, [latitude, longitude]);
+}
+
 
 function apiIp() {
 
@@ -72,6 +83,7 @@ function apiIp() {
             /*const idMap = document.querySelector('#map') as HTMLElement
             idMap.after(mapRender);*/
             console.log('teste')
+            
 
 
         })
@@ -82,7 +94,14 @@ function apiIp() {
 
 const PartePrincipal = () => {
 
+    useEffect(() => {
 
+    
+         console.log('renderizado ok')
+    
+    
+    
+    }, [latitude, longitude]);
 
     return (
         <div>
@@ -142,7 +161,7 @@ const PartePrincipal = () => {
 
 export default PartePrincipal;
 
- useEffect(() => {
+/* useEffect(() => {
     
     const position = [latitude, longitude]
     const map = useMap()
@@ -157,3 +176,5 @@ export default PartePrincipal;
 
 
 }, [latitude, longitude]);
+
+*/
