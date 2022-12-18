@@ -21,7 +21,7 @@ import '../api/api'
 
 export let latitude: number = 51.505;
 export let longitude: number = -0.09;
-export let position = [latitude, longitude];
+//export let position = [latitude, longitude];
 
 
 console.log(latitude);
@@ -92,6 +92,7 @@ function apiIp() {
 }
 
 
+
 const PartePrincipal = () => {
 
     useEffect(() => {
@@ -147,7 +148,7 @@ const PartePrincipal = () => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        <Marker position={position as [number, number]}>
+                        <Marker position={[latitude, longitude]}>
                             <Popup>This is the location of the IP Address or Domain</Popup>
                         </Marker>
 
