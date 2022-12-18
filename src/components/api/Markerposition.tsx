@@ -3,14 +3,11 @@ import { Marker, Popup, useMap } from "react-leaflet"
 import { latitude } from "./api"
 import { longitude } from "./api"
 
-import { position } from "./api"
+
 
 export default function Markerposition() {
     
-    useEffect(() =>  {
-      console.log('nova renderização');
-    }, [position, latitude, longitude]);
-
+    const position = [latitude, longitude]
     const map = useMap()
     
     console.log(position);

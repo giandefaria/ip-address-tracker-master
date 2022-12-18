@@ -14,7 +14,7 @@ import Markerposition from './Markerposition';
 
 export let latitude: number = 51.505;
 export let longitude: number = -0.09;
-export let position = [latitude, longitude];
+
 
 
 export function apiIp() {
@@ -56,17 +56,11 @@ export function apiIp() {
 
             const position = [latitude, longitude]
             console.log(position)
+            
 
-            return (
-                <>
-                  <Marker position={position as [number, number]}>
-                    <Popup>This is the location of the IP Address or Domain</Popup>
-                  </Marker>
-                </>
-             )
             /*const idMap = document.querySelector('#map') as HTMLElement
             idMap.after(mapRender);*/
-
+                console.log('teste')
 
 
         })
