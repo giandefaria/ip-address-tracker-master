@@ -1,5 +1,6 @@
 import './main.css'
 import arrow from '../../assets/styles/images/icon-arrow.svg'
+import icon from '../icon/icon'
 import {
     MapContainer,
     TileLayer,
@@ -10,6 +11,7 @@ import {
 } from 'react-leaflet'
 
 import { useEffect, useState } from 'react'
+
 
 //import '../api/api'
 //import { apiIp } from '../api/api'
@@ -111,12 +113,18 @@ function ApiIp() {
 
 */
 
-const PartePrincipal = () => {
-
+function PartePrincipal() {
+/*    const [position, setPosition] = useState(null);
     let [latitude, setLatitude] = useState(51.505);
     let [longitude, setLongitude] = useState(-0.09);
+*/
+    let latitude = 51.505;
+    let longitude = -0.09;
+    useEffect(() =>{
 
-   
+
+    })
+    
 
     function ApiIp() {
 
@@ -137,8 +145,8 @@ const PartePrincipal = () => {
                 location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
                 timezone = data.location.timezone;
                 isp = data.isp;
-                setLatitude = data.location.lat;
-                setLongitude = data.location.lng
+                latitude = data.location.lat;
+                longitude = data.location.lng
                 console.log(ip);
                 console.log(location);
                 console.log(timezone);
@@ -180,7 +188,11 @@ const PartePrincipal = () => {
        
        
        
-       }, []);
+       });
+    }
+
+    const submitExec = (e: { preventDefault: () => void }) =>{
+        e.preventDefault();
     }
 
     return (
@@ -189,7 +201,7 @@ const PartePrincipal = () => {
             <section className='content--ip--input'>
                 <h1 className='title--ip--box'>IP Address Tracker</h1>
 
-                <form>
+                <form onSubmit={submitExec}>
                     <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' required />
                     <button type="submit">
                         <img src={arrow} alt="arrow" className='arrow' onClick={ApiIp} />
@@ -230,7 +242,7 @@ const PartePrincipal = () => {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        <Marker position={[latitude, longitude]}>
+                        <Marker icon={icon} position={[latitude, longitude]}>
                             <Popup>This is the location of the IP Address or Domain</Popup>
                         </Marker>
 
