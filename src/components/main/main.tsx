@@ -116,14 +116,7 @@ const PartePrincipal = () => {
     let [latitude, setLatitude] = useState(51.505);
     let [longitude, setLongitude] = useState(-0.09);
 
-    useEffect(() => {
-
-    
-         console.log('renderizado ok')
-    
-    
-    
-    }, [latitude, longitude]);
+   
 
     function ApiIp() {
 
@@ -196,10 +189,13 @@ const PartePrincipal = () => {
             <section className='content--ip--input'>
                 <h1 className='title--ip--box'>IP Address Tracker</h1>
 
-                <label htmlFor="ip">
-                    <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' />
-                    <img src={arrow} alt="arrow" className='arrow' onClick={ApiIp} />
-                </label>
+                <form>
+                    <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' required />
+                    <button type="submit">
+                        <img src={arrow} alt="arrow" className='arrow' onClick={ApiIp} />
+                    </button>
+                    
+                </form>
 
                 <section className='api--value--return'>
 

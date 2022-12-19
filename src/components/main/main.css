@@ -27,13 +27,20 @@ html {
     color: white;
 }
 
-label {
+form {
     display: flex;
     justify-content: center;
 }
 
 .input--ip {
     width: 50%;
+}
+
+button {
+    padding-top: 2px;
+    border-radius: 0 14px 14px 0;
+    border-style: none;
+    background: black;
 }
 
 .arrow {
