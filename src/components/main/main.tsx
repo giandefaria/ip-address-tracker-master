@@ -9,9 +9,9 @@ import {
 
 } from 'react-leaflet'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-import '../api/api'
+//import '../api/api'
 //import { apiIp } from '../api/api'
 //import { latitude } from '../api/api'
 //import { longitude } from '../api/api' 
@@ -19,12 +19,13 @@ import '../api/api'
 
 
 
-export let latitude: number = 51.505;
-export let longitude: number = -0.09;
+//export let latitude: number = 51.505;
+//export let longitude: number = -0.09;
 //export let position = [latitude, longitude];
 
 
-console.log(latitude);
+
+/*console.log(latitude);
 console.log(longitude);
 
 const Test = () => {
@@ -37,15 +38,19 @@ const Test = () => {
    
    }, [latitude, longitude]);
 }
+*/
 
-
-function apiIp() {
+/*
+function ApiIp() {
 
     let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
     let ip;
     let location;
     let timezone;
     let isp;
+
+    let [latitude, setLatitude] = useState(51.505);
+    let [longitude, setLongitude] = useState(-0.09);
 
     console.log(ipOrDomain.value);
 
@@ -57,8 +62,8 @@ function apiIp() {
             location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
             timezone = data.location.timezone;
             isp = data.isp;
-            latitude = data.location.lat;
-            longitude = data.location.lng
+            setLatitude = data.location.lat;
+            setLongitude = data.location.lng
             console.log(ip);
             console.log(location);
             console.log(timezone);
@@ -78,22 +83,38 @@ function apiIp() {
 
             const position = [latitude, longitude]
             console.log(position)
+            
 
 
             /*const idMap = document.querySelector('#map') as HTMLElement
             idMap.after(mapRender);*/
             console.log('teste')
             
-
+            
+/*
 
         })
+   
+    
 
     })
+
+    useEffect(() => {
+
+    
+        console.log('renderizado ok 2222')
+   
+   
+   
+   }, []);
 }
 
-
+*/
 
 const PartePrincipal = () => {
+
+    let [latitude, setLatitude] = useState(51.505);
+    let [longitude, setLongitude] = useState(-0.09);
 
     useEffect(() => {
 
@@ -104,6 +125,71 @@ const PartePrincipal = () => {
     
     }, [latitude, longitude]);
 
+    function ApiIp() {
+
+        let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
+        let ip;
+        let location;
+        let timezone;
+        let isp;
+    
+       
+        console.log(ipOrDomain.value);
+    
+        fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value).then((Response) => {
+    
+            Response.json().then((data) => {
+                console.log(data);
+                ip = data.ip;
+                location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
+                timezone = data.location.timezone;
+                isp = data.isp;
+                setLatitude = data.location.lat;
+                setLongitude = data.location.lng
+                console.log(ip);
+                console.log(location);
+                console.log(timezone);
+                console.log(isp);
+                console.log(latitude);
+                console.log(longitude);
+    
+                const ipHtmlElement = document.querySelector('.ip') as HTMLElement;
+                const locationHtmlElement = document.querySelector('.location') as HTMLElement;
+                const timezoneHtmlElement = document.querySelector('.timezone') as HTMLElement;
+                const ispHtmlElement = document.querySelector('.isp') as HTMLElement;
+    
+                ipHtmlElement.innerHTML = ip;
+                locationHtmlElement.innerHTML = location;
+                timezoneHtmlElement.innerHTML = timezone;
+                ispHtmlElement.innerHTML = isp;
+    
+                const position = [latitude, longitude]
+                console.log(position)
+    
+    
+                /*const idMap = document.querySelector('#map') as HTMLElement
+                idMap.after(mapRender);*/
+                console.log('teste')
+                
+                
+    
+    
+            })
+       
+        
+    
+        })
+    
+        useEffect(() => {
+    
+        
+            console.log('renderizado ok 2222')
+       
+       
+       
+       }, []);
+    }
+
     return (
         <div>
 
@@ -112,7 +198,7 @@ const PartePrincipal = () => {
 
                 <label htmlFor="ip">
                     <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' />
-                    <img src={arrow} alt="arrow" className='arrow' onClick={apiIp} />
+                    <img src={arrow} alt="arrow" className='arrow' onClick={ApiIp} />
                 </label>
 
                 <section className='api--value--return'>

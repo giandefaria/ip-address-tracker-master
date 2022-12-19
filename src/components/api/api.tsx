@@ -1,4 +1,6 @@
-import arrow from '../../assets/styles/images/icon-arrow.svg'
+
+
+/*import arrow from '../../assets/styles/images/icon-arrow.svg'
 import {
     MapContainer,
     TileLayer,
@@ -9,7 +11,7 @@ import {
 import { JsxAttribute } from 'typescript';
 import { useEffect } from 'react';
 import Markerposition from './Markerposition';
-
+*/
 
 
 export let latitude: number = 51.505;
