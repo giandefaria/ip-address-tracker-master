@@ -13,8 +13,8 @@ export let longitude: number;
 
 
 function PartePrincipal() {
-   
- 
+
+
     //para corrigir o erro de tipo 'never', ao adicionar os atributos no  html da página, tive que indicar que é um array de qualquer tipo.
     const [apiReturn, setApiReturn] = useState(null) as Array<any>;
     const [lat, setLat] = useState(null);
@@ -26,12 +26,12 @@ function PartePrincipal() {
             //função assíncrona para pegar o ip do usuário no primeiro carregamento da página
             const userLocation = async () => {
                 //pegue o valor retornado pela api na const resposta, que será após aguardar o retorno da api 
-                const resposta = await fetch (
+                const resposta = await fetch(
                     'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress='
                 )
                 //converta a resposta retornada em json e atribua a constante data
                 const data = await resposta.json()
-                setApiReturn(data)
+                setApiReturn(data) //adiciono o json ao setApiReturn
                 latitude = data.location.lat;  //adiciono o valor retornado em data nas variáveis latitude e longitude
                 longitude = data.location.lng;
                 console.log(latitude);
@@ -45,13 +45,13 @@ function PartePrincipal() {
         }
 
     }, []);
-    
-   
+
+    //fará uma nova requisição a API, mas agora a partir da informação adicionada no input da página. Também será uma função assíncrona
     const newIpTracking = async () => {
-        
+
         //verificará a presença de letras na expressão regular. Servirá para descobrir se o valor é um ip ou um domínio
         const reg = new RegExp('[A-Za-z]');
-        
+
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
         console.log(reg.test(ipOrDomain.value)); //verifica se o valor indicado é true ou false
 
@@ -63,19 +63,19 @@ function PartePrincipal() {
             )
             const data = await resposta.json()
             setApiReturn(data);
-    
+
             latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
             longitude = data.location.lng;
             console.log(latitude);
-        
-          //mas se o valor é verdadeiro, então é um domínio  
+
+            //mas se o valor é verdadeiro, então é um domínio  
         } else if (reg.test(ipOrDomain.value) == true) {
             const resposta = await fetch(
                 'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'domain=' + ipOrDomain.value
             )
             const data = await resposta.json()
             setApiReturn(data);
-    
+
             latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
             longitude = data.location.lng;
             console.log(latitude);
@@ -83,11 +83,10 @@ function PartePrincipal() {
 
     }
 
- 
-
-    const submitExec = (e: { preventDefault: () => void }) =>{
+    //funções que serão executadas ao preencher o form e clicar no botão submit. 
+    const submitExec = (e: { preventDefault: () => void }) => {
         console.log(e);
-        e.preventDefault();
+        e.preventDefault(); //previne o recarregamento da página e executa a const newIpTracking;
         newIpTracking();
     }
 
@@ -104,54 +103,54 @@ function PartePrincipal() {
                     <button type="submit">
                         <img src={arrow} alt="arrow" className='arrow' />
                     </button>
-                    
+
                 </form>
-        
-        {apiReturn && (
-                <section className='api--value--return'>
 
-                    <div className='ipp--box'>
-                        <h2>IP ADDRESS</h2>
-                        <p className='ip'>{apiReturn.ip}</p>
-                    </div>
+                {apiReturn && (
+                    <section className='api--value--return'>
 
-                    <div className='location--box'>
-                        <h2>LOCATION</h2>
-                        <p className='location'>{apiReturn.location.city}</p>
-                    </div>
+                        <div className='ipp--box'>
+                            <h2>IP ADDRESS</h2>
+                            <p className='ip'>{apiReturn.ip}</p>
+                        </div>
 
-                    <div className='timezone--box'>
-                        <h2>TIMEZONE</h2>
-                        <p className="timezone">{apiReturn.location.timezone}</p>
-                    </div>
+                        <div className='location--box'>
+                            <h2>LOCATION</h2>
+                            <p className='location'>{apiReturn.location.city}</p>
+                        </div>
 
-                    <div className='isp--box'>
-                        <h2>ISP</h2>
-                        <p className="isp">{apiReturn.isp}</p>
-                    </div>
+                        <div className='timezone--box'>
+                            <h2>TIMEZONE</h2>
+                            <p className="timezone">{apiReturn.location.timezone}</p>
+                        </div>
 
-                </section>
-                    )}      
+                        <div className='isp--box'>
+                            <h2>ISP</h2>
+                            <p className="isp">{apiReturn.isp}</p>
+                        </div>
+
+                    </section>
+                )}
             </section>
             <section className='content--map'>
-            {apiReturn && (
-                <div id='map'>
-                    <MapContainer center={[apiReturn.location.lat, apiReturn.location.lng]} zoom={13} scrollWheelZoom={true}>
-                        <TileLayer
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
+                {apiReturn && (
+                    <div id='map'>
+                        <MapContainer center={[apiReturn.location.lat, apiReturn.location.lng]} zoom={13} scrollWheelZoom={true}>
+                            <TileLayer
+                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
 
-                        <Markerposition />
+                            <Markerposition />
 
 
-                    </MapContainer>
-                </div>
-            )}    
+                        </MapContainer>
+                    </div>
+                )}
             </section>
-  
+
         </div>
-        
+
     );
 
 }
