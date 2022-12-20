@@ -21,8 +21,8 @@ import { useEffect, useState } from 'react'
 
 
 
-//export let latitude: number = 51.505;
-//export let longitude: number = -0.09;
+export let latitude: number;
+export let longitude: number;
 //export let position = [latitude, longitude];
 
 
@@ -122,8 +122,7 @@ function PartePrincipal() {
     let [longitude, setLongitude] = useState(-0.09);
 */
    
-    let latitude = 51.505;
-    let longitude = -0.09;
+ 
     //para corrigir o erro de tipo 'never', ao adicionar os atributos no  html da página, tive que indicar que é um array de qualquer tipo.
     const [apiReturn, setApiReturn] = useState(null) as Array<any>;
     const [lat, setLat] = useState(null);
@@ -152,7 +151,7 @@ function PartePrincipal() {
 
     }, []);
     
-    
+   
     const newIpTracking = async () => {
        
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
@@ -161,6 +160,9 @@ function PartePrincipal() {
         )
         const data = await resposta.json()
         setApiReturn(data);
+
+        latitude = apiReturn.location.lat;
+        longitude = apiReturn.location.lng;
         
 
     }
