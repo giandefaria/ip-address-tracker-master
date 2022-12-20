@@ -10,7 +10,8 @@
 - [X] implementar para capturar o ip pessoal
 - [X] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
 - [X] adicionar o icone de localização 
-- [ ] verificar se o valor adicionado é um ip ou o nome de domínio
+- [X] verificar se o valor adicionado é um ip ou o nome de domínio
+- [ ] Adicionar mensagem de erro quando valor não for encontrado
 - [ ] arrumar o estilo da página
 
 tentar o u seEffect para identificar useState. Tentar criar um useState para a latitude e longitude
