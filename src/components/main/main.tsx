@@ -127,8 +127,25 @@ function PartePrincipal() {
     const [apiReturn, setApiReturn] = useState(null);
     const [lat, setLat] = useState(null);
 
-    //useEffect para carregar ao iniciar a página e sempre que tiver alguma alteração
+    //useEffect para carregar ao iniciar a página e sempre que tiver alguma alteração. captarei o ip do usuário
     useEffect(() => {
+        //tente
+        try {
+            //função assíncrona para pegar o ip do usuário
+            const userLocation = async () => {
+                //pegue a resposta, que será após aguardar o retorno da api 
+                const resposta = await fetch (
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress='
+                )
+                //converta a resposta retornada em json e atribua a constante data
+                const data = await resposta.json()
+                setApiReturn(data);
+            }
+
+
+        } catch (error) {
+            console.trace(error);
+        }
 
         
 
