@@ -113,85 +113,25 @@ function ApiIp() {
 
 */
 
+
+
+
 function PartePrincipal() {
 /*    const [position, setPosition] = useState(null);
     let [latitude, setLatitude] = useState(51.505);
     let [longitude, setLongitude] = useState(-0.09);
 */
+   
     let latitude = 51.505;
     let longitude = -0.09;
-    useEffect(() =>{
-
-
-    })
+    const [apiReturn, setApiReturn] = useState(null);
+    const [lat, setLat] = useState(null);
     
 
-    function ApiIp() {
 
-        let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
-        let ip;
-        let location;
-        let timezone;
-        let isp;
-    
-       
-        console.log(ipOrDomain.value);
-    
-        fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value).then((Response) => {
-    
-            Response.json().then((data) => {
-                console.log(data);
-                ip = data.ip;
-                location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
-                timezone = data.location.timezone;
-                isp = data.isp;
-                latitude = data.location.lat;
-                longitude = data.location.lng
-                console.log(ip);
-                console.log(location);
-                console.log(timezone);
-                console.log(isp);
-                console.log(latitude);
-                console.log(longitude);
-    
-                const ipHtmlElement = document.querySelector('.ip') as HTMLElement;
-                const locationHtmlElement = document.querySelector('.location') as HTMLElement;
-                const timezoneHtmlElement = document.querySelector('.timezone') as HTMLElement;
-                const ispHtmlElement = document.querySelector('.isp') as HTMLElement;
-    
-                ipHtmlElement.innerHTML = ip;
-                locationHtmlElement.innerHTML = location;
-                timezoneHtmlElement.innerHTML = timezone;
-                ispHtmlElement.innerHTML = isp;
-    
-                const position = [latitude, longitude]
-                console.log(position)
-    
-    
-                /*const idMap = document.querySelector('#map') as HTMLElement
-                idMap.after(mapRender);*/
-                console.log('teste')
-                
-                
-    
-    
-            })
-       
-        
-    
-        })
-    
-        useEffect(() => {
-    
-        
-            console.log('renderizado ok 2222')
-       
-       
-       
-       });
-    }
 
     const submitExec = (e: { preventDefault: () => void }) =>{
+        console.log(e);
         e.preventDefault();
     }
 
@@ -204,7 +144,7 @@ function PartePrincipal() {
                 <form onSubmit={submitExec}>
                     <input type="text" className='input--ip' placeholder='Search for any Ip address or domain' required />
                     <button type="submit">
-                        <img src={arrow} alt="arrow" className='arrow' onClick={ApiIp} />
+                        <img src={arrow} alt="arrow" className='arrow' />
                     </button>
                     
                 </form>

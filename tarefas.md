@@ -12,3 +12,4 @@
 - [] adicionar o icone de localização 
 
 tentar o u seEffect para identificar useState. Tentar criar um useState para a latitude e longitude
+tentar usar o this
