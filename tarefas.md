@@ -15,3 +15,11 @@
 
 tentar o u seEffect para identificar useState. Tentar criar um useState para a latitude e longitude
 tentar usar o this
+
+conceitos para estudar:
+useMemo()
+useState()
+useEffect()
+try/catch
+async()
+axios
