@@ -67,7 +67,15 @@ function PartePrincipal() {
             console.log(latitude);
             
         } else {
-            console.log('erro');
+            const resposta = await fetch(
+                'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&domain=' + ipOrDomain.value
+            )
+            const data = await resposta.json()
+            setApiReturn(data);
+    
+            latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
+            longitude = data.location.lng;
+            console.log(latitude);
         }
         /*const resposta = await fetch(
             'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value
