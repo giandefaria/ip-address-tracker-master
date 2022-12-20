@@ -152,6 +152,31 @@ function PartePrincipal() {
 
     }, []);
     
+    
+    const newIpTracking = async () => {
+       
+        let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
+        const resposta = await fetch(
+            'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value
+        )
+        const data = await resposta.json()
+
+
+    }
+
+   /* useEffect(() =>{
+        
+        const new
+        
+        const map = useMap()
+    
+        console.log(position);
+        map.flyTo (position as [number, number], 13, {
+                animate:true
+         })
+
+    }, [])
+    */
 
 
 
