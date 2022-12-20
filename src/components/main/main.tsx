@@ -60,7 +60,8 @@ function PartePrincipal() {
         longitude = data.location.lng;
         console.log(latitude);
 
-        const reg = new RegExp('[A-Za-z]');
+        //verificará a presença de letras na expressão regular
+        const reg = new /*RegExp('[A-Za-z]')*/ RegExp('[0-9]');
         console.log(reg.test(ipOrDomain.value));
 
         //adicionei variavel latitude e longitude que irá atribuir o novo valor. 
