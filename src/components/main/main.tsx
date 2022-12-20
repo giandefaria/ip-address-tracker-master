@@ -124,6 +124,7 @@ function PartePrincipal() {
    
     let latitude = 51.505;
     let longitude = -0.09;
+    //para corrigir o erro de tipo 'never', ao adicionar os atributos no  html da página, tive que indicar que é um array de qualquer tipo.
     const [apiReturn, setApiReturn] = useState(null) as Array<any>;
     const [lat, setLat] = useState(null);
 
@@ -159,6 +160,7 @@ function PartePrincipal() {
         e.preventDefault();
     }
 
+    //<!–- se apiReturn for verdadeiro '&&' o resto será executado. Linha 178 -->
     return (
         <div>
 
@@ -172,18 +174,18 @@ function PartePrincipal() {
                     </button>
                     
                 </form>
-
+        
         {apiReturn && (
                 <section className='api--value--return'>
 
                     <div className='ipp--box'>
-                        <h2>{apiReturn.ip}</h2>
-                        <p className='ip'></p>
+                        <h2>IP ADDRESS</h2>
+                        <p className='ip'>{apiReturn.ip}</p>
                     </div>
 
                     <div className='location--box'>
                         <h2>LOCATION</h2>
-                        <p className='location'></p>
+                        <p className='location'>{apiReturn.location.city}</p>
                     </div>
 
                     <div className='timezone--box'>
