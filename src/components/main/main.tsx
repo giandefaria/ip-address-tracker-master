@@ -160,6 +160,7 @@ function PartePrincipal() {
             'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value
         )
         const data = await resposta.json()
+        setApiReturn(data);
 
 
     }
