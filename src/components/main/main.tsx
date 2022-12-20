@@ -61,7 +61,7 @@ function PartePrincipal() {
         console.log(latitude);
 
         const reg = new RegExp('[A-Za-z]');
-        console.log(reg.test(data.location.lat));
+        console.log(reg.test(ipOrDomain.value));
 
         //adicionei variavel latitude e longitude que irá atribuir o novo valor. 
         //Funcao markerposition usara o mapflyto de acordo com esses valores
