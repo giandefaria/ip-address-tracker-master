@@ -202,23 +202,25 @@ function PartePrincipal() {
                     )}      
             </section>
             <section className='content--map'>
-
+            {apiReturn && (
                 <div id='map'>
-                    <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={true}>
+                    <MapContainer center={[apiReturn.location.lat, apiReturn.location.lng]} zoom={13} scrollWheelZoom={true}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        <Marker icon={icon} position={[latitude, longitude]}>
+                        <Marker icon={icon} position={[apiReturn.location.lat, apiReturn.location.lng]}>
                             <Popup>This is the location of the IP Address or Domain</Popup>
                         </Marker>
 
                     </MapContainer>
                 </div>
+            )}    
             </section>
   
         </div>
+        
     );
 
 }
