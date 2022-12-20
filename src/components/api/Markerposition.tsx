@@ -6,16 +6,14 @@ import {
   latitude,
   longitude
 } from "../main/main"
-
 import icon from "../icon/icon"
 
-
+//função marcar posição. Pega os valores atualizados do main
 
 export default function Markerposition() {
 
   const position = [latitude, longitude]
   const map = useMap()
-
   console.log(position);
 
   useEffect(() => {

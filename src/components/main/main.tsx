@@ -17,7 +17,7 @@ import { useEffect, useState } from 'react'
 //import { apiIp } from '../api/api'
 //import { latitude } from '../api/api'
 //import { longitude } from '../api/api' 
-//import Markerposition from '../api/Markerposition'
+import Markerposition from '../api/Markerposition'
 
 
 
@@ -140,8 +140,8 @@ function PartePrincipal() {
                 //converta a resposta retornada em json e atribua a constante data
                 const data = await resposta.json()
                 setApiReturn(data)
-                latitude = apiReturn.location.lat;
-                longitude = apiReturn.location.lng;
+                latitude = data.location.lat;  //adiciono o valor retornado em data nas variáveis latitude e longitude
+                longitude = data.location.lng;
                 console.log(latitude);
             }
 
@@ -164,10 +164,11 @@ function PartePrincipal() {
         const data = await resposta.json()
         setApiReturn(data);
 
-        latitude = apiReturn.location.lat;
-        longitude = apiReturn.location.lng;
+        latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
+        longitude = data.location.lng;
         console.log(latitude);
-        
+        //adicionei variavel latitude e longitude que irá atribuir o novo valor. 
+        //Funcao markerposition usara o mapflyto de acordo com esses valores
 
     }
 
@@ -229,9 +230,8 @@ function PartePrincipal() {
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
 
-                        <Marker icon={icon} position={[apiReturn.location.lat, apiReturn.location.lng]}>
-                            <Popup>This is the location of the IP Address or Domain</Popup>
-                        </Marker>
+                        <Markerposition />
+
 
                     </MapContainer>
                 </div>
