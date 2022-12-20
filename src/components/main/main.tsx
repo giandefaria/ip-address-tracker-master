@@ -59,6 +59,10 @@ function PartePrincipal() {
         latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
         longitude = data.location.lng;
         console.log(latitude);
+
+        const reg = new RegExp('[A-Za-z]');
+        console.log(reg.test(data.location.lat));
+
         //adicionei variavel latitude e longitude que irá atribuir o novo valor. 
         //Funcao markerposition usara o mapflyto de acordo com esses valores
 
