@@ -126,6 +126,13 @@ function PartePrincipal() {
     let longitude = -0.09;
     const [apiReturn, setApiReturn] = useState(null);
     const [lat, setLat] = useState(null);
+
+    //useEffect para carregar ao iniciar a página e sempre que tiver alguma alteração
+    useEffect(() => {
+
+        
+
+    }, [])
     
 
 
