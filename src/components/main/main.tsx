@@ -162,7 +162,6 @@ function PartePrincipal() {
         const data = await resposta.json()
         setApiReturn(data);
 
-
     }
 
    /* useEffect(() =>{
@@ -184,6 +183,7 @@ function PartePrincipal() {
     const submitExec = (e: { preventDefault: () => void }) =>{
         console.log(e);
         e.preventDefault();
+        newIpTracking();
     }
 
     //<!–- se apiReturn for verdadeiro '&&' o resto será executado. Linha 178 -->
