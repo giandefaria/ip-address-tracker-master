@@ -124,7 +124,7 @@ function PartePrincipal() {
    
     let latitude = 51.505;
     let longitude = -0.09;
-    const [apiReturn, setApiReturn] = useState(null);
+    const [apiReturn, setApiReturn] = useState(null) as Array<any>;
     const [lat, setLat] = useState(null);
 
     //useEffect para carregar ao iniciar a página e sempre que tiver alguma alteração. captarei o ip do usuário
@@ -143,14 +143,13 @@ function PartePrincipal() {
             }
 
             userLocation();
+            console.log(apiReturn);
 
         } catch (error) {
             console.trace(error);
         }
 
-        
-
-    }, [])
+    }, []);
     
 
 
@@ -174,10 +173,11 @@ function PartePrincipal() {
                     
                 </form>
 
+        {apiReturn && (
                 <section className='api--value--return'>
 
                     <div className='ipp--box'>
-                        <h2>IP ADDRESS</h2>
+                        <h2>{apiReturn.ip}</h2>
                         <p className='ip'></p>
                     </div>
 
@@ -197,6 +197,7 @@ function PartePrincipal() {
                     </div>
 
                 </section>
+                    )}      
             </section>
             <section className='content--map'>
 
@@ -214,6 +215,7 @@ function PartePrincipal() {
                     </MapContainer>
                 </div>
             </section>
+  
         </div>
     );
 
