@@ -139,9 +139,10 @@ function PartePrincipal() {
                 )
                 //converta a resposta retornada em json e atribua a constante data
                 const data = await resposta.json()
-                setApiReturn(data);
+                setApiReturn(data)
             }
 
+            userLocation();
 
         } catch (error) {
             console.trace(error);
