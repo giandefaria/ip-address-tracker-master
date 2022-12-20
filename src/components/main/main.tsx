@@ -190,7 +190,7 @@ function PartePrincipal() {
 
                     <div className='timezone--box'>
                         <h2>TIMEZONE</h2>
-                        <p className="timezone"></p>
+                        <p className="timezone">{apiReturn.location.timezone}</p>
                     </div>
 
                     <div className='isp--box'>
