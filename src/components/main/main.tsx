@@ -140,6 +140,9 @@ function PartePrincipal() {
                 //converta a resposta retornada em json e atribua a constante data
                 const data = await resposta.json()
                 setApiReturn(data)
+                latitude = apiReturn.location.lat;
+                longitude = apiReturn.location.lng;
+                console.log(latitude);
             }
 
             userLocation();
@@ -163,6 +166,7 @@ function PartePrincipal() {
 
         latitude = apiReturn.location.lat;
         longitude = apiReturn.location.lng;
+        console.log(latitude);
         
 
     }

@@ -7,27 +7,34 @@ import {
   longitude
 } from "../main/main"
 
+import icon from "../icon/icon"
+
 
 
 export default function Markerposition() {
-    
-    const position = [latitude, longitude]
-    const map = useMap()
-    
-    console.log(position);
-    map.flyTo (position as [number, number], 13, {
-            animate:true
-     })
 
-     console.log('teste')
+  const position = [latitude, longitude]
+  const map = useMap()
 
-     return (
-        <>
-          <Marker position={position as [number, number]}>
-            <Popup>This is the location of the IP Address or Domain</Popup>
-          </Marker>
-        </>
-     )
+  console.log(position);
+
+  useEffect(() => {
+    map.flyTo(position as [number, number], 13, {
+      animate: true
+    })
+
+  }, [map, position]);
+
+
+  console.log('teste')
+
+  return (
+    <>
+      <Marker icon={icon} position={position as [number, number]}>
+        <Popup>This is the location of the IP Address or Domain</Popup>
+      </Marker>
+    </>
+  )
 
 }
 
