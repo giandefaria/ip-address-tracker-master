@@ -161,24 +161,11 @@ function PartePrincipal() {
         )
         const data = await resposta.json()
         setApiReturn(data);
+        
 
     }
 
-   /* useEffect(() =>{
-        
-        const new
-        
-        const map = useMap()
-    
-        console.log(position);
-        map.flyTo (position as [number, number], 13, {
-                animate:true
-         })
-
-    }, [])
-    */
-
-
+ 
 
     const submitExec = (e: { preventDefault: () => void }) =>{
         console.log(e);
