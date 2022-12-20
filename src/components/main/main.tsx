@@ -48,9 +48,28 @@ function PartePrincipal() {
     
    
     const newIpTracking = async () => {
-       
+        
+        const reg = new RegExp('[A-Za-z]');
+        
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
-        const resposta = await fetch(
+        console.log(reg.test(ipOrDomain.value))
+
+        if (reg.test(ipOrDomain.value) == false) {
+
+            const resposta = await fetch(
+                'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value
+            )
+            const data = await resposta.json()
+            setApiReturn(data);
+    
+            latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
+            longitude = data.location.lng;
+            console.log(latitude);
+            
+        } else {
+            console.log('erro');
+        }
+        /*const resposta = await fetch(
             'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value
         )
         const data = await resposta.json()
@@ -59,10 +78,10 @@ function PartePrincipal() {
         latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
         longitude = data.location.lng;
         console.log(latitude);
-
+        */
         //verificará a presença de letras na expressão regular
-        const reg = new /*RegExp('[A-Za-z]')*/ RegExp('[0-9]');
-        console.log(reg.test(ipOrDomain.value));
+        //const reg = new RegExp('[A-Za-z]');
+        //console.log(reg.test(ipOrDomain.value));
 
         //adicionei variavel latitude e longitude que irá atribuir o novo valor. 
         //Funcao markerposition usara o mapflyto de acordo com esses valores
