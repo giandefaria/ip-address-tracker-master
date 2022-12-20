@@ -1,126 +1,18 @@
 import './main.css'
 import arrow from '../../assets/styles/images/icon-arrow.svg'
-import icon from '../icon/icon'
 import {
     MapContainer,
     TileLayer,
-    Marker,
-    Popup,
-    useMap,
-
 } from 'react-leaflet'
 
 import { useEffect, useState } from 'react'
-
-
-//import '../api/api'
-//import { apiIp } from '../api/api'
-//import { latitude } from '../api/api'
-//import { longitude } from '../api/api' 
 import Markerposition from '../api/Markerposition'
-
-
 
 export let latitude: number;
 export let longitude: number;
-//export let position = [latitude, longitude];
-
-
-
-/*console.log(latitude);
-console.log(longitude);
-
-const Test = () => {
-    useEffect(() => {
-
-    
-        console.log('renderizado ok 2222')
-   
-   
-   
-   }, [latitude, longitude]);
-}
-*/
-
-/*
-function ApiIp() {
-
-    let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
-    let ip;
-    let location;
-    let timezone;
-    let isp;
-
-    let [latitude, setLatitude] = useState(51.505);
-    let [longitude, setLongitude] = useState(-0.09);
-
-    console.log(ipOrDomain.value);
-
-    fetch('https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress=' + ipOrDomain.value).then((Response) => {
-
-        Response.json().then((data) => {
-            console.log(data);
-            ip = data.ip;
-            location = data.location.city + ', ' + data.location.region + "<br>" + data.location.postalCode;
-            timezone = data.location.timezone;
-            isp = data.isp;
-            setLatitude = data.location.lat;
-            setLongitude = data.location.lng
-            console.log(ip);
-            console.log(location);
-            console.log(timezone);
-            console.log(isp);
-            console.log(latitude);
-            console.log(longitude);
-
-            const ipHtmlElement = document.querySelector('.ip') as HTMLElement;
-            const locationHtmlElement = document.querySelector('.location') as HTMLElement;
-            const timezoneHtmlElement = document.querySelector('.timezone') as HTMLElement;
-            const ispHtmlElement = document.querySelector('.isp') as HTMLElement;
-
-            ipHtmlElement.innerHTML = ip;
-            locationHtmlElement.innerHTML = location;
-            timezoneHtmlElement.innerHTML = timezone;
-            ispHtmlElement.innerHTML = isp;
-
-            const position = [latitude, longitude]
-            console.log(position)
-            
-
-
-            /*const idMap = document.querySelector('#map') as HTMLElement
-            idMap.after(mapRender);*/
-            console.log('teste')
-            
-            
-/*
-
-        })
-   
-    
-
-    })
-
-    useEffect(() => {
-
-    
-        console.log('renderizado ok 2222')
-   
-   
-   
-   }, []);
-}
-
-*/
-
-
 
 
 function PartePrincipal() {
-/*    const [position, setPosition] = useState(null);
-    let [latitude, setLatitude] = useState(51.505);
-    let [longitude, setLongitude] = useState(-0.09);
-*/
    
  
     //para corrigir o erro de tipo 'never', ao adicionar os atributos no  html da página, tive que indicar que é um array de qualquer tipo.
@@ -131,9 +23,9 @@ function PartePrincipal() {
     useEffect(() => {
         //tente
         try {
-            //função assíncrona para pegar o ip do usuário
+            //função assíncrona para pegar o ip do usuário no primeiro carregamento da página
             const userLocation = async () => {
-                //pegue a resposta, que será após aguardar o retorno da api 
+                //pegue o valor retornado pela api na const resposta, que será após aguardar o retorno da api 
                 const resposta = await fetch (
                     'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress='
                 )
@@ -180,7 +72,8 @@ function PartePrincipal() {
         newIpTracking();
     }
 
-    //<!–- se apiReturn for verdadeiro '&&' o resto será executado. Linha 178 -->
+    //abaixo há o retorno do html da página, com a adição de valores variaveis capturados pelo função assíncrona e pelo useState
+    //<!–- se apiReturn for verdadeiro '&&' o resto será executado. Linha 178 -->. 
     return (
         <div>
 
@@ -245,21 +138,3 @@ function PartePrincipal() {
 }
 
 export default PartePrincipal;
-
-/* useEffect(() => {
-    
-    const position = [latitude, longitude]
-    const map = useMap()
-    
-    console.log(position);
-    map.flyTo (position as [number, number], 13, {
-            animate:true
-     })
-
-     console.log('teste')
-
-
-
-}, [latitude, longitude]);
-
-*/
