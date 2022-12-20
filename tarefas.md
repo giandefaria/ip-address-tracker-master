@@ -6,10 +6,12 @@
 - [x] adicionar o mapa abaixo
 - [X] integrar a api de localização pelo ip
 - [X] adicionar valores capturados pela api no html da página
-- [ ] fazer a api procurar o valor adicionado no input
-- [ ] implementar para capturar o ip pessoal
-- [] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
-- [] adicionar o icone de localização 
+- [X] fazer a api procurar o valor adicionado no input
+- [X] implementar para capturar o ip pessoal
+- [X] integrar a api do mapa, para focar sobre o endereço retornado pela api do ip
+- [X] adicionar o icone de localização 
+- [ ] verificar se o valor adicionado é um ip ou o nome de domínio
+- [ ] arrumar o estilo da página
 
 tentar o u seEffect para identificar useState. Tentar criar um useState para a latitude e longitude
 tentar usar o this
