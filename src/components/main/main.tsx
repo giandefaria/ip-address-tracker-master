@@ -66,7 +66,7 @@ function PartePrincipal() {
 
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
         console.log(reg.test(ipOrDomain.value)); //verifica se o valor indicado é true ou false
-        console.log(ipOrDomain.value.replace(exp,""));
+        console.log(ipOrDomain.value.replace(exp,"")); //verifica se foi retirado o https e as barras do domínio informado
         //se o valor retornar falso, então executará a busca do endereço pelo ip
         if (reg.test(ipOrDomain.value) == false) {
 
