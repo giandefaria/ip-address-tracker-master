@@ -95,7 +95,7 @@ function PartePrincipal() {
             //verificará se o valor é valido, senão, será criado um alerta para inserir um domínio válido
             try {
                 const resposta = await fetch(
-                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&' + 'domain=' + ipOrDomain.value.replace(exp,"")
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&' + 'domain=' + ipOrDomain.value.replace(exp,"") //estou enviando o link após o tratamento em que retira https e as barras(/);
                 )
                 const data = await resposta.json()
                 setApiReturn(data);
@@ -164,7 +164,7 @@ function PartePrincipal() {
             <section className='content--map'>
                 {apiReturn && (
                     <div id='map'>
-                        <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={true}>
+                        <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={true} style={{height: "70vh"}}>
                             <TileLayer
                                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
