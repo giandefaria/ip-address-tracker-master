@@ -64,7 +64,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    /*gap: 50px;*/
     width: 70%;
     height: 130px;
     border-radius: 12px;
