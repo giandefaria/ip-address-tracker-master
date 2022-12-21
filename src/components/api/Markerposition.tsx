@@ -15,6 +15,7 @@ export default function Markerposition() {
   console.log(position);
 
   useEffect(() => {
+
     map.flyTo(position as [number, number], 13, {
       animate: true
     })
