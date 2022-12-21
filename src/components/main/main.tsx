@@ -60,8 +60,9 @@ function PartePrincipal() {
 
         //verificará a presença de letras na expressão regular. Servirá para descobrir se o valor é um ip ou um domínio
         const reg = new RegExp('[A-Za-z]');
-        //const exp = new RegExp('https://');
-        const exp = /[https://]/;
+        //const exp pegará as expressões http ou https //, e a barra ao final do link, se tiver.
+        //solicitarei para substituir essas expressões por "", com isso, evito a mensagem de erro da API.
+        const exp = / (^(http|https):\/) | (\/) /g;
 
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
         console.log(reg.test(ipOrDomain.value)); //verifica se o valor indicado é true ou false
@@ -94,7 +95,7 @@ function PartePrincipal() {
             //verificará se o valor é valido, senão, será criado um alerta para inserir um domínio válido
             try {
                 const resposta = await fetch(
-                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&' + 'domain=' + ipOrDomain.value
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&' + 'domain=' + ipOrDomain.value.replace(exp,"")
                 )
                 const data = await resposta.json()
                 setApiReturn(data);
