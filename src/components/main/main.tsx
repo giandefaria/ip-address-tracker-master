@@ -62,7 +62,7 @@ function PartePrincipal() {
         const reg = new RegExp('[A-Za-z]');
         //const exp pegará as expressões http ou https //, e a barra ao final do link, se tiver.
         //solicitarei para substituir essas expressões por "", com isso, evito a mensagem de erro da API.
-        const exp = / (^(http|https):\/) | (\/) /g;
+        const exp = /(^(http|https):\/)|(\/)/g;
 
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
         console.log(reg.test(ipOrDomain.value)); //verifica se o valor indicado é true ou false
