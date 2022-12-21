@@ -60,10 +60,11 @@ function PartePrincipal() {
 
         //verificará a presença de letras na expressão regular. Servirá para descobrir se o valor é um ip ou um domínio
         const reg = new RegExp('[A-Za-z]');
+        const exp = new RegExp('https://');
 
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
         console.log(reg.test(ipOrDomain.value)); //verifica se o valor indicado é true ou false
-
+        console.log(ipOrDomain.value.replace(exp,""));
         //se o valor retornar falso, então executará a busca do endereço pelo ip
         if (reg.test(ipOrDomain.value) == false) {
 
