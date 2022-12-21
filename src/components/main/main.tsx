@@ -8,8 +8,11 @@ import {
 import { useEffect, useState } from 'react'
 import Markerposition from '../api/Markerposition'
 
+//variáveis latitude e longitude serão exportadas para o markerposition poder ter acesso aos seus valores
 export let latitude: number;
 export let longitude: number;
+//tive que retirar do useState a função de captar esses valores e adicionar no html. Dava bug na página a cada vez que ocorria um erro
+//praticamente a página renderizava e os valores voltavam a ser nulos, o que impedia a correta renderização.
 let ip: number;
 let location: string;
 let timezone: any;
