@@ -22,10 +22,6 @@ let isp: string;
 function PartePrincipal() {
 
 
-    //para corrigir o erro de tipo 'never', ao adicionar os atributos no  html da página, tive que indicar que é um array de qualquer tipo.
-    const [apiReturn, setApiReturn] = useState(null) as Array<any>;
-    const [lat, setLat] = useState(null);
-
     //useEffect para carregar ao iniciar a página e sempre que tiver alguma alteração. captarei o ip do usuário
     useEffect(() => {
         //tente
@@ -37,22 +33,17 @@ function PartePrincipal() {
                     'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress='
                 )
                 //converta a resposta retornada em json e atribua a constante data
-                console.log(apiReturn)
                 const data = await resposta.json()
-                setApiReturn(data) //adiciono o json ao setApiReturn
+
                 latitude = data.location.lat;  //adiciono o valor retornado em data nas variáveis latitude e longitude
                 longitude = data.location.lng;
                 ip = data.ip;
                 location = data.location.city;
                 timezone = data.location.timezone;
                 isp = data.isp;
-                console.log(latitude);
-                console.log(apiReturn)
-                console.log(useState)
             }
 
             userLocation();
-            console.log(apiReturn);
 
         } catch (error) {
             console.trace(error);
@@ -77,7 +68,6 @@ function PartePrincipal() {
                     'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'ipAddress=' + ipOrDomain.value
                 )
                 const data = await resposta.json()
-                setApiReturn(data);
 
                 latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
                 longitude = data.location.lng;
@@ -92,7 +82,6 @@ function PartePrincipal() {
                 'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'domain=' + ipOrDomain.value
             )
             const data = await resposta.json()
-            setApiReturn(data);
 
             latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
             longitude = data.location.lng;
@@ -124,7 +113,7 @@ function PartePrincipal() {
 
                 </form>
 
-                {apiReturn && (
+           
                     <section className='api--value--return'>
 
                         <div className='ipp--box'>
@@ -148,10 +137,10 @@ function PartePrincipal() {
                         </div>
 
                     </section>
-                )}
+             
             </section>
             <section className='content--map'>
-                {apiReturn && (
+            
                     <div id='map'>
                         <MapContainer center={[latitude, longitude]} zoom={13} scrollWheelZoom={true}>
                             <TileLayer
@@ -164,7 +153,7 @@ function PartePrincipal() {
 
                         </MapContainer>
                     </div>
-                )}
+
             </section>
 
         </div>
