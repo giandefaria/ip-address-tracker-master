@@ -7,7 +7,6 @@ import {
 
 import { useEffect, useState } from 'react'
 import Markerposition from '../api/Markerposition'
-import { time } from 'console'
 
 export let latitude: number;
 export let longitude: number;
