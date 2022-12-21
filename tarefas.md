@@ -12,7 +12,7 @@
 - [X] adicionar o icone de localização 
 - [X] verificar se o valor adicionado é um ip ou o nome de domínio
 - [X] Adicionar mensagem de erro quando valor não for encontrado. Tentar try e catch
-- [ ] api não reconhece domínios com http antes e com / ao final. Ver algum método de retirar isso.
+- [X] api não reconhece domínios com http antes e com / ao final. Ver algum método de retirar isso.
 - [ ] arrumar o estilo da página
 
 tentar o u seEffect para identificar useState. Tentar criar um useState para a latitude e longitude
