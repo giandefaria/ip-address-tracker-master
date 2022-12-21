@@ -36,7 +36,6 @@ function PartePrincipal() {
                     'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress='
                 )
                 //converta a resposta retornada em json e atribua a constante data
-                console.log(apiReturn)
                 const data = await resposta.json()
                 setApiReturn(data) //adiciono o json ao setApiReturn
                 latitude = data.location.lat;  //adiciono o valor retornado em data nas variáveis latitude e longitude
@@ -45,13 +44,10 @@ function PartePrincipal() {
                 location = data.location.city;
                 timezone = data.location.timezone;
                 isp = data.isp;
-                console.log(latitude);
-                console.log(apiReturn)
-                console.log(useState)
+
             }
 
             userLocation();
-            console.log(apiReturn);
 
         } catch (error) {
             console.trace(error);
@@ -71,6 +67,7 @@ function PartePrincipal() {
         //se o valor retornar falso, então executará a busca do endereço pelo ip
         if (reg.test(ipOrDomain.value) == false) {
 
+            //verificará se o valor é valido, senão, será criado um alerta para inserir um ip válido
             try {
                 const resposta = await fetch(
                     'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'ipAddress=' + ipOrDomain.value
@@ -84,26 +81,31 @@ function PartePrincipal() {
                 location = data.location.city;
                 timezone = data.location.timezone;
                 isp = data.isp;
-                console.log(latitude);
+
             } catch {
-                alert('erro');
+                alert('Insira um Ip válido');
             }
             
             //mas se o valor é verdadeiro, então é um domínio  
         } else if (reg.test(ipOrDomain.value) == true) {
-            const resposta = await fetch(
-                'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'domain=' + ipOrDomain.value
-            )
-            const data = await resposta.json()
-            setApiReturn(data);
+            
+            //verificará se o valor é valido, senão, será criado um alerta para inserir um domínio válido
+            try {
+                const resposta = await fetch(
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'domain=' + ipOrDomain.value
+                )
+                const data = await resposta.json()
+                setApiReturn(data);
 
-            latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
-            longitude = data.location.lng;
-            ip = data.ip;
-            location = data.location.city;
-            timezone = data.location.timezone;
-            isp = data.isp;
-            console.log(latitude);
+                latitude = data.location.lat; //adiciono o valor retornado em data nas variáveis latitude e longitude
+                longitude = data.location.lng;
+                ip = data.ip;
+                location = data.location.city;
+                timezone = data.location.timezone;
+                isp = data.isp;
+            } catch {
+                alert('Insira um domínio válido');
+            }
         }
 
     }
