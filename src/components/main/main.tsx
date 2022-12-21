@@ -33,7 +33,7 @@ function PartePrincipal() {
             const userLocation = async () => {
                 //pegue o valor retornado pela api na const resposta, que será após aguardar o retorno da api 
                 const resposta = await fetch(
-                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&ipAddress='
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&ipAddress='
                 )
                 //converta a resposta retornada em json e atribua a constante data
                 const data = await resposta.json()
@@ -60,7 +60,8 @@ function PartePrincipal() {
 
         //verificará a presença de letras na expressão regular. Servirá para descobrir se o valor é um ip ou um domínio
         const reg = new RegExp('[A-Za-z]');
-        const exp = new RegExp('https://');
+        //const exp = new RegExp('https://');
+        const exp = /[https://]/;
 
         let ipOrDomain = document.querySelector('.input--ip') as HTMLInputElement;
         console.log(reg.test(ipOrDomain.value)); //verifica se o valor indicado é true ou false
@@ -71,7 +72,7 @@ function PartePrincipal() {
             //verificará se o valor é valido, senão, será criado um alerta para inserir um ip válido
             try {
                 const resposta = await fetch(
-                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'ipAddress=' + ipOrDomain.value
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&' + 'ipAddress=' + ipOrDomain.value
                 )
                 const data = await resposta.json()
                 setApiReturn(data);
@@ -93,7 +94,7 @@ function PartePrincipal() {
             //verificará se o valor é valido, senão, será criado um alerta para inserir um domínio válido
             try {
                 const resposta = await fetch(
-                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_m25176uh13PLKuNsDz5iswx3XGnHG&' + 'domain=' + ipOrDomain.value
+                    'https://geo.ipify.org/api/v2/country,city?apiKey=at_KwCtfcsFOSOBHTXf2CoSkoYBuy5wq&' + 'domain=' + ipOrDomain.value
                 )
                 const data = await resposta.json()
                 setApiReturn(data);
