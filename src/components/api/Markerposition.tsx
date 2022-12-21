@@ -12,7 +12,6 @@ export default function Markerposition() {
 
   const position = [latitude, longitude]
   const map = useMap()
-  console.log(position);
 
   useEffect(() => {
 
@@ -22,7 +21,6 @@ export default function Markerposition() {
 
   }, [map, position]);
 
-  console.log('teste')
 
   return (
     <>

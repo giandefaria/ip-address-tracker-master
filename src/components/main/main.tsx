@@ -83,12 +83,12 @@ function PartePrincipal() {
                 isp = data.isp;
 
             } catch {
-                alert('Insira um Ip válido');
+                alert('Ip não localizado. Insira um Ip válido!');
             }
-            
+
             //mas se o valor é verdadeiro, então é um domínio  
         } else if (reg.test(ipOrDomain.value) == true) {
-            
+
             //verificará se o valor é valido, senão, será criado um alerta para inserir um domínio válido
             try {
                 const resposta = await fetch(
@@ -104,10 +104,9 @@ function PartePrincipal() {
                 timezone = data.location.timezone;
                 isp = data.isp;
             } catch {
-                alert('Insira um domínio válido');
+                alert('Endereço não localizado. Insira um endereço válido!');
             }
         }
-
     }
 
     //funções que serão executadas ao preencher o form e clicar no botão submit. 
@@ -118,7 +117,7 @@ function PartePrincipal() {
     }
 
     //abaixo há o retorno do html da página, com a adição de valores variaveis capturados pelo função assíncrona e pelo useState
-    //<!–- se apiReturn for verdadeiro '&&' o resto será executado. Linha 178 -->. 
+    //<!–- se apiReturn for verdadeiro '&&' o resto será executado. Linha 135 e 162 -->. Tive que deixar essa funcionalidade para evitar bug da página em branco
     return (
         <div>
 
