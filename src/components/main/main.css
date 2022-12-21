@@ -81,5 +81,5 @@ button {
 
 /*class Leaflet module*/
 .leaflet-container {
-    height: 200px;
+    border-radius: 0px 0px 12px 12px;
 }
