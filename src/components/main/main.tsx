@@ -138,22 +138,22 @@ function PartePrincipal() {
                 {apiReturn && (
                     <section className='api--value--return'>
 
-                        <div className='ipp--box'>
+                        <div className='ipp--box padding--box'>
                             <h2>IP ADDRESS</h2>
                             <p className='ip'>{ip}</p>
                         </div>
 
-                        <div className='location--box'>
+                        <div className='location--box padding--box'>
                             <h2>LOCATION</h2>
                             <p className='location'>{location}</p>
                         </div>
 
-                        <div className='timezone--box'>
+                        <div className='timezone--box padding--box'>
                             <h2>TIMEZONE</h2>
                             <p className="timezone">{timezone}</p>
                         </div>
 
-                        <div className='isp--box'>
+                        <div className='isp--box padding--box'>
                             <h2>ISP</h2>
                             <p className="isp">{isp}</p>
                         </div>

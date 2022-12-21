@@ -64,6 +64,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: left;
     /*gap: 50px;*/
     width: 70%;
     height: 130px;
@@ -75,8 +76,10 @@ button {
 
 }
 
-.api--value--return div {
+.padding--box {
     border-right: 2px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
     /*padding para espaçamento da borda*/
 }
 
