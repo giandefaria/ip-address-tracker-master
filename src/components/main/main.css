@@ -5,7 +5,7 @@
 
 html {
     max-width: 1200px;
-    margin: 3vh auto 0;
+    margin: 2vh auto 0;
 }
 
 .content--ip--input {
@@ -28,16 +28,21 @@ html {
 }
 
 .title--ip--box {
+    margin-bottom: 30px;
     color: white;
 }
 
 form {
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .input--ip {
-    width: 50%;
+    width: 38%;
+    border-radius: 14px 0 0 14px;
+    border-style: none;
+    padding-left: 20px;
 }
 
 button {
