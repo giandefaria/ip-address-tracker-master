@@ -110,3 +110,26 @@ button {
 .leaflet-container {
     border-radius: 0px 0px 12px 12px;
 }
+
+
+@media screen and (max-width: 500px) {
+
+    html {
+        margin: 0 auto;
+    }
+
+    .api--value--return {
+        flex-direction: column;
+        text-align: center;
+        height: 32vh;
+    }
+
+    .api--value--return h2 {
+        font-size: 2vw;
+    }
+
+    .api--value--return p {
+        font-size: 4vw;
+    }
+
+}
