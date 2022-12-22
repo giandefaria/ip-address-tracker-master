@@ -88,6 +88,11 @@ button {
     font-weight: 500;
 }
 
+.api--value--return p {
+    font-weight: 500;
+    font-size: 20px;
+}
+
 .padding--box {
     height: 60px;
     border-right: 1px solid lightgray;
