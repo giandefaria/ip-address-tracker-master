@@ -118,6 +118,10 @@ button {
         margin: 0 auto;
     }
 
+    .content--ip--input {
+        margin-bottom: 0;
+    }
+
     .api--value--return {
         flex-direction: column;
         text-align: center;
