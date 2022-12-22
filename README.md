@@ -26,4 +26,8 @@
 src="./src/assets/styles/images/design-desktop.jpg"
 />
 
+<image
+src="./src/assets/styles/images/design-mobile.jpg"
+/>
+
 </p>
