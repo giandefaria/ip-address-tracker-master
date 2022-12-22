@@ -118,9 +118,14 @@ button {
         margin: 0 auto;
     }
 
+    form {
+        margin-bottom: 20px;
+    }
+
     .content--ip--input {
-        margin-bottom: 0;
+        margin-bottom: 0px;
         border-radius: 0;
+        height: 36vh;
     }
 
     .input--ip {
@@ -143,6 +148,10 @@ button {
 
     .padding--box {
         border-right: none;
+    }
+
+    .ipp--box {
+        padding-top: 10px;
     }
 
 }
