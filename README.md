@@ -12,3 +12,18 @@
   src="https://img.shields.io/github/watchers/giandefaria/ip-address-tracker-master"
   />
 </p>
+
+# 📋 Índice do projeto
+
+- [Visual do projeto](#id01)
+
+
+# Visual do projeto <a name="id01"></a>
+
+<p align="center">
+
+<image
+src=".src/assets/styles/images/design-desktop.jpg"
+>
+
+</p>
