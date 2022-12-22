@@ -84,7 +84,7 @@ button {
 
 .api--value--return h2 {
     color: hsl(0, 0%, 59%);
-    font-size: 1.0vw;
+    font-size: 0.6vw;
     font-weight: 500;
     padding-bottom: 10px;
 }
