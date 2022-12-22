@@ -85,6 +85,10 @@ button {
     /*padding para espaçamento da borda*/
 }
 
+.isp--box {
+    border-right: none;
+}
+
 /*class Leaflet module*/
 .leaflet-container {
     border-radius: 0px 0px 12px 12px;
