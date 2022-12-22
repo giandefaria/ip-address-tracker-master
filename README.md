@@ -23,7 +23,7 @@
 <p align="center">
 
 <image
-src=".src/assets/styles/images/design-desktop.jpg"
+src="./src/assets/styles/images/design-desktop.jpg"
 />
 
 </p>
