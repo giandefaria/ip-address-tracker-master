@@ -24,6 +24,6 @@
 
 <image
 src=".src/assets/styles/images/design-desktop.jpg"
->
+/>
 
 </p>
