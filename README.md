@@ -23,7 +23,6 @@
 <p align="center">
 
 * Design no computador
-
 <image
 src="./src/assets/styles/images/design-desktop.jpg"
 />
@@ -33,7 +32,6 @@ src="./src/assets/styles/images/design-desktop.jpg"
 <p align="center">
 
 * Design no celular
-
 <image
 src="./src/assets/styles/images/design-mobile.jpg"
 />
