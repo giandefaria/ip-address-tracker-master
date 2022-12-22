@@ -141,4 +141,8 @@ button {
         font-size: 4vw;
     }
 
+    .padding--box {
+        border-right: none;
+    }
+
 }
