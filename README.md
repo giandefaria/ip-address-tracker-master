@@ -26,8 +26,10 @@
 src="./src/assets/styles/images/design-desktop.jpg"
 />
 
+</p>
+
+<p align="center">
 <image
 src="./src/assets/styles/images/design-mobile.jpg"
 />
-
 </p>
