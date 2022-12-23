@@ -24,7 +24,7 @@
 
 # Proposta do projeto <a name="id01"></a>
 
-O desafio desse projeto é montar uma pagina que faz uma conexão com uma API responsável por buscar a localização do IP do usuário (ou o IP informado), bem como a localização de algum domínio informado, e mostrar essa localização no mapa rendereizado na página.
+O desafio desse projeto é montar uma pagina que faz uma conexão com uma API responsável por buscar a localização do IP do usuário (ou o IP informado), bem como a localização de algum domínio informado, e mostrar essa localização no mapa renderizado na página.
 
 Esse projeto faz a comunicação com a API https://geo.ipify.org/, a qual retorna a localização do IP ou domínio informado. Para o mapa, foi utilizado o Leaflet (https://react-leaflet.js.org/docs/example-events/).
 
