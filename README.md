@@ -46,7 +46,7 @@ Caso a página não seja renderizada e dê erro, provavelmente é porque acabou 
 
 * Design no computador
 <image
-src="./src/assets/styles/images/design-desktop.jpg"
+src="./src/assets/design/design-desktop.jpg"
 />
 
 </p>
@@ -55,7 +55,7 @@ src="./src/assets/styles/images/design-desktop.jpg"
 
 * Design no celular
 <image
-src="./src/assets/styles/images/design-mobile.jpg"
+src="./src/assets/design/design-mobile.jpg"
 />
 </p>
 
