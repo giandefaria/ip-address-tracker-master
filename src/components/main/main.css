@@ -84,14 +84,14 @@ button {
 
 .api--value--return h2 {
     color: hsl(0, 0%, 59%);
-    font-size: 0.6vw;
+    font-size: clamp(0.5em, 0.6vw, 1em);
     font-weight: 500;
     padding-bottom: 10px;
 }
 
 .api--value--return p {
     font-weight: 500;
-    font-size: 1.0vw;
+    font-size: clamp(0.8em, 1vw, 1.3em);
 }
 
 .padding--box {
