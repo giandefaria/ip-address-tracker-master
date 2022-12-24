@@ -1,5 +1,5 @@
 import './main.css'
-import arrow from '../../assets/styles/images/icon-arrow.svg'
+import arrow from '../../assets/icon-arrow.svg'
 import {
     MapContainer,
     TileLayer,
