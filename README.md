@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+<p align="center">
+  <image
+  src="https://img.shields.io/github/languages/count/giandefaria/ip-address-tracker-master"
+  />
+  <image
+  src="https://img.shields.io/github/languages/top/giandefaria/ip-address-tracker-master"
+  />
+  <image
+  src="https://img.shields.io/github/last-commit/giandefaria/ip-address-tracker-master"
+  />
+  <image
+  src="https://img.shields.io/github/watchers/giandefaria/ip-address-tracker-master"
+  />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📋 Índice do projeto
 
-## Available Scripts
 
-In the project directory, you can run:
+- [Proposta do projeto](#id01)
+- [Alerta!](#id02)
+- [Visual do projeto](#id03)
+- [Feito com](#id04)
+- [Procedimento de instalação](#id05)
 
-### `npm start`
+# Proposta do projeto <a name="id01"></a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O desafio desse projeto é montar uma pagina que faz uma conexão com uma API responsável por buscar a localização do IP do usuário (ou o IP informado), bem como a localização de algum domínio informado, e mostrar essa localização no mapa renderizado na página.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Esse projeto faz a comunicação com a API https://geo.ipify.org/, a qual retorna a localização do IP ou domínio informado. Para o mapa, foi utilizado o Leaflet (https://react-leaflet.js.org/docs/example-events/).
 
-### `npm test`
+Após realizarmos a requisição da API e termos retornado a localização do IP/Domínio informado, esses valores são renderizados no mapa logo abaixo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para realizar a requisição, basta informar o endereço de IP ou o domínio no input da página e apertar a tecla enter (ou clicar no botão ao lado do input).
 
-### `npm run build`
+# Alerta <a name="id02"> </a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Um defeito do serviço de localização de IP/Domínio, é que existe um número limmitado de requisições que podem ser realizadas. Cada requisição desconta um "crédito" que o usuário tem na página, e o site oferece 1000 créditos ao novo usuário. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Caso a página não seja renderizada e dê erro, provavelmente é porque acabou o crédito na key indicada na API e eu ainda não percebi o problema. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Visual do projeto <a name="id03"></a>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Design no computador
+<image
+src="./src/assets/styles/images/design-desktop.jpg"
+/>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+</p>
 
-## Learn More
+<p align="center">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Design no celular
+<image
+src="./src/assets/styles/images/design-mobile.jpg"
+/>
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 🛠 Feito com <a name="id04"></a>
+
+<br />
+
+- [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+
+
+<br />
+
+# 📝 Procedimentos de instalação <a name="id05"></a>
+
+<br />
+
+Clone este repositório usando o comando:
+
+```bash
+git clone https://github.com/giandefaria/ip-address-tracker-master.git
+```
+
+Na pasta do projeto instale as dependências com uso do npm ou yarn
+
+```bash
+npm install
+ou
+yarn install
+```
+
+<br />
+
+# Autor <a name="id06"></a>
+
+<br />
+
+- Frontend Mentor - [@giandefaria](https://www.frontendmentor.io/profile/giandefaria)
+- Linkedim - [Gian de Faria](www.linkedin.com/in/gianfaria)
+- GitHub - [giandefaria](https://github.com/giandefaria)
